@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback, useMemo } from 'react';
+import React, { memo, useState, useCallback, useMemo } from "react";
 import {
   Play,
   RotateCcw,
@@ -8,19 +8,22 @@ import {
   ChevronDown,
   ChevronUp,
   Send,
-} from 'lucide-react';
-import { useFormBuilder } from '../../hooks/useFormBuilder';
-import { useFormRenderer } from '../../hooks/useFormRenderer';
-import { RenderField } from './RenderField';
-import { RenderGroup } from './RenderGroup';
-import { SubmissionResultModal } from './SubmissionResultModal';
-import { Button } from '../common/Button';
-import { Badge } from '../common/Badge';
-import './LiveFormPreview.scss';
+} from "lucide-react";
+import { useFormBuilder } from "../../hooks/useFormBuilder";
+import { useFormRenderer } from "../../hooks/useFormRenderer";
+import { RenderField } from "./RenderField";
+import { RenderGroup } from "./RenderGroup";
+import { SubmissionResultModal } from "./SubmissionResultModal";
+import { Button } from "../common/Button";
+import { Badge } from "../common/Badge";
+import "./LiveFormPreview.scss";
 
 export const LiveFormPreview: React.FC = memo(() => {
   const { schema } = useFormBuilder();
-  const [submissionData, setSubmissionData] = useState<Record<string, any> | null>(null);
+  const [submissionData, setSubmissionData] = useState<Record<
+    string,
+    any
+  > | null>(null);
   const [showLiveJson, setShowLiveJson] = useState(false);
 
   const handleValidSubmit = useCallback((data: Record<string, any>) => {
@@ -55,29 +58,30 @@ export const LiveFormPreview: React.FC = memo(() => {
       <div className="live-preview__header">
         <div className="live-preview__header-left">
           <div className="live-preview__icon">
-            <Play size={14} style={{ fill: '#059669', color: '#059669' }} />
+            <Play size={14} style={{ fill: "#059669", color: "#059669" }} />
           </div>
           <div>
             <h3 className="live-preview__title">Live Form Preview</h3>
-            <div className="live-preview__subtitle">Interactive live testing environment</div>
+            <div className="live-preview__subtitle">
+              Interactive live testing environment
+            </div>
           </div>
         </div>
 
         <div>
           {hasElements && (
-            <Badge variant={isValid ? 'green' : 'amber'} size="sm">
-              {isValid ? (
-                <>
-                  <CheckCircle size={12} />
-                  <span>Form Valid</span>
-                </>
-              ) : (
-                <>
-                  <AlertCircle size={12} />
-                  <span>{errorCount} pending issue{errorCount === 1 ? '' : 's'}</span>
-                </>
-              )}
-            </Badge>
+            <Badge
+              variant={isValid ? "green" : "amber"}
+              size="sm"
+              icon={
+                isValid ? <CheckCircle size={12} /> : <AlertCircle size={12} />
+              }
+              title={
+                isValid
+                  ? "Form is valid"
+                  : `${errorCount} validation error${errorCount === 1 ? "" : "s"}`
+              }
+            />
           )}
         </div>
       </div>
@@ -86,9 +90,12 @@ export const LiveFormPreview: React.FC = memo(() => {
       <div className="live-preview__body">
         {!hasElements ? (
           <div className="live-preview__empty">
-            <p className="live-preview__empty-title">No form elements to render</p>
+            <p className="live-preview__empty-title">
+              No form elements to render
+            </p>
             <p className="live-preview__empty-desc">
-              Add fields and groups in the form builder on the left to preview them in real time here.
+              Add fields and groups in the form builder on the left to preview
+              them in real time here.
             </p>
           </div>
         ) : (
@@ -96,7 +103,7 @@ export const LiveFormPreview: React.FC = memo(() => {
             {/* Form Headline Card */}
             <div className="live-preview__form-header">
               <h2 className="live-preview__form-title">
-                {schema.title || 'Untitled Form'}
+                {schema.title || "Untitled Form"}
               </h2>
               {schema.description && (
                 <p className="live-preview__form-desc">{schema.description}</p>
@@ -106,7 +113,7 @@ export const LiveFormPreview: React.FC = memo(() => {
             {/* Form Elements */}
             <div className="live-preview__elements">
               {schema.elements.map((element) => {
-                if (element.type === 'group') {
+                if (element.type === "group") {
                   return (
                     <RenderGroup
                       key={element.id}
@@ -139,9 +146,14 @@ export const LiveFormPreview: React.FC = memo(() => {
             {/* Error Notification if submitted with errors */}
             {submitted && !isValid && (
               <div className="live-preview__error-summary">
-                <AlertCircle size={16} style={{ flexShrink: 0, marginTop: '2px' }} />
+                <AlertCircle
+                  size={16}
+                  style={{ flexShrink: 0, marginTop: "2px" }}
+                />
                 <div>
-                  <div style={{ fontWeight: 600 }}>Please fix the following validation errors:</div>
+                  <div style={{ fontWeight: 600 }}>
+                    Please fix the following validation errors:
+                  </div>
                   <ul>
                     {Object.entries(allErrors).map(([path, msg]) => (
                       <li key={path}>
@@ -187,9 +199,12 @@ export const LiveFormPreview: React.FC = memo(() => {
             onClick={() => setShowLiveJson(!showLiveJson)}
             className="live-preview__tray-toggle"
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <Code2 size={14} />
-              <span>Live Form Data State ({Object.keys(formData).length} top-level fields)</span>
+              <span>
+                Live Form Data State ({Object.keys(formData).length} top-level
+                fields)
+              </span>
             </div>
             {showLiveJson ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
           </button>
@@ -212,4 +227,4 @@ export const LiveFormPreview: React.FC = memo(() => {
   );
 });
 
-LiveFormPreview.displayName = 'LiveFormPreview';
+LiveFormPreview.displayName = "LiveFormPreview";
