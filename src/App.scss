@@ -1,0 +1,122 @@
+@use './styles/variables' as *;
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  color: $color-text;
+}
+
+.app-workspace {
+  flex: 1;
+  padding: 16px;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.workspace-container {
+  min-height: 640px;
+
+  @media (min-width: 1024px) {
+    height: calc(100vh - 90px);
+  }
+}
+
+// Split View Layout
+.split-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  height: 100%;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  &__builder-pane {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    height: 100%;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+
+  &__canvas-col {
+    height: 520px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+  }
+
+  &__config-col {
+    height: 520px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+  }
+
+  &__preview-col {
+    height: 600px;
+    overflow: hidden;
+
+    @media (min-width: 1024px) {
+      height: 100%;
+    }
+  }
+}
+
+// Builder Only View Layout
+.builder-only-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  height: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1.6fr 1fr;
+  }
+
+  &__canvas-col {
+    height: 520px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+  }
+
+  &__config-col {
+    height: 520px;
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+  }
+}
+
+// Preview Only View Layout
+.preview-only-view {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 750px;
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
+}
