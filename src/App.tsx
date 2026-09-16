@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FormBuilderProvider, useFormBuilder } from './context/FormBuilderContext';
-import { BuilderHeader, ViewLayoutMode } from './components/builder/BuilderHeader';
+import { BuilderHeader, type ViewLayoutMode } from './components/builder/BuilderHeader';
 import { BuilderCanvas } from './components/builder/BuilderCanvas';
 import { FieldConfigPanel } from './components/builder/FieldConfigPanel';
 import { LiveFormPreview } from './components/preview/LiveFormPreview';
