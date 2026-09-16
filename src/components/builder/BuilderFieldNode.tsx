@@ -140,50 +140,34 @@ export const BuilderFieldNode = memo<BuilderFieldNodeProps>(
 
         {/* Validation & Tag summary */}
         <div className="builder-field__badges">
-          <Badge variant={isText ? 'blue' : 'green'} size="sm">
-            {isText ? 'text input' : 'number input'}
-          </Badge>
+          <Badge variant={isText ? 'blue' : 'green'} size="sm" title={isText ? 'text input' : 'number input'} />
 
           {hasRequired && (
-            <Badge variant="amber" size="sm">
-              required
-            </Badge>
+            <Badge variant="amber" size="sm" title="required" />
           )}
 
           {isText && field.validation?.minLength !== undefined && (
-            <Badge variant="neutral" size="sm">
-              min: {field.validation.minLength}
-            </Badge>
+            <Badge variant="neutral" size="sm" title={`min: ${field.validation.minLength}`} />
           )}
 
           {isText && field.validation?.maxLength !== undefined && (
-            <Badge variant="neutral" size="sm">
-              max: {field.validation.maxLength}
-            </Badge>
+            <Badge variant="neutral" size="sm" title={`max: ${field.validation.maxLength}`} />
           )}
 
           {!isText && field.validation?.min !== undefined && (
-            <Badge variant="neutral" size="sm">
-              min: {field.validation.min}
-            </Badge>
+            <Badge variant="neutral" size="sm" title={`min: ${field.validation.min}`} />
           )}
 
           {!isText && field.validation?.max !== undefined && (
-            <Badge variant="neutral" size="sm">
-              max: {field.validation.max}
-            </Badge>
+            <Badge variant="neutral" size="sm" title={`max: ${field.validation.max}`} />
           )}
 
           {field.disabled && (
-            <Badge variant="neutral" size="sm">
-              disabled
-            </Badge>
+            <Badge variant="neutral" size="sm" title="disabled" />
           )}
 
           {field.readOnly && (
-            <Badge variant="neutral" size="sm">
-              read-only
-            </Badge>
+            <Badge variant="neutral" size="sm" title="read-only" />
           )}
         </div>
       </div>

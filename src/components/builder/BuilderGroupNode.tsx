@@ -95,12 +95,8 @@ export const BuilderGroupNode = memo<BuilderGroupNodeProps>(
                 <span className="builder-group__label">
                   {group.label || 'Untitled Group'}
                 </span>
-                <Badge variant="purple" size="sm">
-                  group
-                </Badge>
-                <Badge variant="neutral" size="sm">
-                  Elements: {group.elements.length}
-                </Badge>
+                <Badge variant="purple" size="sm" title="group" />
+                <Badge variant="neutral" size="sm" title={`Elements: ${group.elements.length}`} />
               </div>
               <div className="builder-group__name">
                 namespace: <span>{group.name}</span>

@@ -68,9 +68,7 @@ export const BuilderCanvas: React.FC = memo(() => {
         <AddElementMenu onAdd={handleAddRoot} label="Add to Form" size="sm" variant="primary" />
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{ fontSize: '12px', fontWeight: 600, color: '#334155' }}>Structure</span>
-          <Badge variant="neutral" size="sm">
-            {schema.elements.length} root item{schema.elements.length === 1 ? '' : 's'}
-          </Badge>
+          <Badge variant="neutral" size="sm" title={`${schema.elements.length} root item${schema.elements.length === 1 ? '' : 's'}`} />
         </div>
       </div>
 
