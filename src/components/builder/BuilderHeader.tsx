@@ -22,7 +22,7 @@ export interface BuilderHeaderProps {
 
 export const BuilderHeader = memo<BuilderHeaderProps>(
   ({ viewMode, onViewModeChange }) => {
-    const { canUndo, canRedo, undo, redo, loadTemplate, clearForm } = useFormBuilder();
+    const { loadTemplate, clearForm } = useFormBuilder();
     const [jsonModalState, setJsonModalState] = useState<{
       isOpen: boolean;
       tab: 'export' | 'import';
@@ -42,7 +42,7 @@ export const BuilderHeader = memo<BuilderHeaderProps>(
                   Configurable Form Builder
                 </h1>
                 <p className="builder-header__app-subtitle">
-                  Construct, nest groups, preview live & schema JSON
+                  Construct, nest groups, preview live & export/import schema JSON
                 </p>
               </div>
             </div>
