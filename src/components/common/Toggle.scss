@@ -1,0 +1,68 @@
+@use '../../styles/variables' as *;
+
+.toggle-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  &__description {
+    font-size: 11px;
+    color: $color-text-muted;
+    margin-top: 1px;
+  }
+
+  &__switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 36px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: $radius-full;
+    background-color: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &--checked {
+      background-color: $color-primary;
+    }
+  }
+
+  &__thumb {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: $radius-full;
+    background-color: #ffffff;
+    transform: translateX(3px);
+    transition: transform 0.2s ease;
+
+    &--checked {
+      transform: translateX(19px);
+    }
+  }
+}
