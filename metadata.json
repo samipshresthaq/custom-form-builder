@@ -1,6 +1,0 @@
-{
-  "name": "Configurable Form Builder",
-  "description": "A configurable React form builder to construct forms, configure text and number fields, manage nested groups, preview live forms, and import/export JSON schemas.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
