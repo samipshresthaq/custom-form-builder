@@ -64,4 +64,3 @@ export const SubmissionResultModal = memo<SubmissionResultModalProps>(({ isOpen,
   );
 });
 
-SubmissionResultModal.displayName = 'SubmissionResultModal';

@@ -41,4 +41,3 @@ export const Input = memo(
   )
 );
 
-Input.displayName = 'Input';

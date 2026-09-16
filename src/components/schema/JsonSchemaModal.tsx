@@ -266,4 +266,3 @@ export const JsonSchemaModal = memo<JsonSchemaModalProps>(
   },
 );
 
-JsonSchemaModal.displayName = "JsonSchemaModal";

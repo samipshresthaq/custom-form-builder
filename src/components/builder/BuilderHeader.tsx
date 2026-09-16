@@ -139,4 +139,3 @@ export const BuilderHeader = memo<BuilderHeaderProps>(
   }
 );
 
-BuilderHeader.displayName = 'BuilderHeader';

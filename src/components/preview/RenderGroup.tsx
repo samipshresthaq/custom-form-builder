@@ -69,4 +69,3 @@ export const RenderGroup = memo<RenderGroupProps>(
   }
 );
 
-RenderGroup.displayName = 'RenderGroup';

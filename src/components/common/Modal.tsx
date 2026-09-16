@@ -76,4 +76,3 @@ export const Modal = memo<ModalProps>(
   }
 );
 
-Modal.displayName = 'Modal';

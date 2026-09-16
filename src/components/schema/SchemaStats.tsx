@@ -37,4 +37,3 @@ export const SchemaStats = memo(() => {
   );
 });
 
-SchemaStats.displayName = 'SchemaStats';

@@ -209,4 +209,3 @@ export const BuilderGroupNode = memo<BuilderGroupNodeProps>(
   }
 );
 
-BuilderGroupNode.displayName = 'BuilderGroupNode';

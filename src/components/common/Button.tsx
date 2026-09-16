@@ -43,4 +43,3 @@ export const Button = memo<ButtonProps>(
   }
 );
 
-Button.displayName = 'Button';

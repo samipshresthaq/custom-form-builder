@@ -26,4 +26,3 @@ export const Badge = memo<BadgeProps>(
   }
 );
 
-Badge.displayName = 'Badge';

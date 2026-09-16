@@ -76,4 +76,3 @@ export const BuilderElementNode = memo<BuilderElementNodeProps>(
   }
 );
 
-BuilderElementNode.displayName = 'BuilderElementNode';

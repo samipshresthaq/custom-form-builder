@@ -159,4 +159,3 @@ export const BuilderCanvas: React.FC = memo(() => {
   );
 });
 
-BuilderCanvas.displayName = 'BuilderCanvas';

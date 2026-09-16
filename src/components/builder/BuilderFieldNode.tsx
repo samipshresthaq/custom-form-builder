@@ -175,4 +175,3 @@ export const BuilderFieldNode = memo<BuilderFieldNodeProps>(
   }
 );
 
-BuilderFieldNode.displayName = 'BuilderFieldNode';

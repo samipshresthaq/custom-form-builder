@@ -60,4 +60,3 @@ export const RenderField = memo<RenderFieldProps>(
   }
 );
 
-RenderField.displayName = 'RenderField';

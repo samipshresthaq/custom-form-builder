@@ -100,4 +100,3 @@ export const AddElementMenu = memo<AddElementMenuProps>(
   }
 );
 
-AddElementMenu.displayName = 'AddElementMenu';

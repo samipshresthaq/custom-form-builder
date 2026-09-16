@@ -41,4 +41,3 @@ export const Toggle = memo<ToggleProps>(
   }
 );
 
-Toggle.displayName = 'Toggle';

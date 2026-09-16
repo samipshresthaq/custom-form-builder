@@ -380,4 +380,3 @@ export const FieldConfigPanel: React.FC = memo(() => {
   );
 });
 
-FieldConfigPanel.displayName = 'FieldConfigPanel';
