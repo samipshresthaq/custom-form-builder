@@ -1,0 +1,78 @@
+@use '../../styles/variables' as *;
+
+.preview-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1e293b;
+  }
+
+  &__required {
+    color: $color-danger;
+    font-weight: bold;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+    background-color: #ffffff;
+    color: $color-text;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &::placeholder {
+      color: $color-text-light;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      box-shadow: 0 0 0 1px $color-primary;
+    }
+
+    &:disabled {
+      background-color: #f1f5f9;
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    &--error {
+      border-color: $color-danger;
+
+      &:focus {
+        border-color: $color-danger;
+        box-shadow: 0 0 0 1px $color-danger;
+      }
+    }
+  }
+
+  &__helper {
+    font-size: 11px;
+    color: $color-text-muted;
+  }
+
+  &__error {
+    font-size: 11px;
+    color: $color-danger;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
