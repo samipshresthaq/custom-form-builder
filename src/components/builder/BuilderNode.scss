@@ -1,0 +1,279 @@
+@use '../../styles/variables' as *;
+
+// Field Node
+.builder-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    border-color: $color-border-hover;
+    background-color: #fafbfc;
+  }
+
+  &--selected {
+    border-color: $color-primary;
+    background-color: #f8fafc;
+    box-shadow: 0 0 0 1px $color-primary;
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: $radius-sm;
+    flex-shrink: 0;
+
+    &--text {
+      background-color: $color-blue-bg;
+      color: $color-blue-text;
+    }
+
+    &--number {
+      background-color: $color-success-bg;
+      color: $color-success-text;
+    }
+  }
+
+  &__meta {
+    min-width: 0;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-text;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__required {
+    font-size: 13px;
+    font-weight: 700;
+    color: $color-danger;
+  }
+
+  &__name {
+    font-size: 11px;
+    font-family: $font-mono;
+    color: $color-text-muted;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    span {
+      color: #334155;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: $radius-sm;
+    color: $color-text-muted;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #e2e8f0;
+      color: $color-text;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &--delete:hover:not(:disabled) {
+      background-color: $color-danger-bg;
+      color: $color-danger;
+    }
+
+    &--active {
+      background-color: #e2e8f0;
+      color: $color-text;
+    }
+  }
+
+  &__badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 2px;
+  }
+}
+
+// Group Node
+.builder-group {
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  background-color: #fcfdfe;
+  transition: border-color 0.15s ease;
+  overflow: visible;
+
+  &--selected {
+    border-color: $color-purple;
+    box-shadow: 0 0 0 1px $color-purple;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border-bottom: 1px solid $color-border;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  &__toggle-btn {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text-muted;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: $radius-sm;
+
+    &:hover {
+      color: $color-text;
+      background-color: #f1f5f9;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: $radius-sm;
+    background-color: $color-purple-bg;
+    color: $color-purple-text;
+    flex-shrink: 0;
+  }
+
+  &__meta {
+    min-width: 0;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  &__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-text;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__name {
+    font-size: 11px;
+    font-family: $font-mono;
+    color: $color-text-muted;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    span {
+      color: #334155;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__body {
+    padding: 10px;
+  }
+
+  &__children {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 2px solid $color-purple-border;
+    padding-left: 10px;
+    margin-left: 6px;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 12px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px dashed $color-border;
+    border-radius: $radius-md;
+    gap: 8px;
+
+    p {
+      font-size: 12px;
+      color: $color-text-muted;
+    }
+  }
+}
